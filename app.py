@@ -21,12 +21,14 @@ def create_app() -> Flask:
         url = urlparse(database_url)
 
         app.config["DB_CONFIG"] = {
-            "host": url.hostname,
-            "port": url.port or 3306,
-            "user": url.username,
-            "password": url.password,
-            "database": url.path.lstrip("/"),
-        }
+        "host": url.hostname,
+        "port": url.port or 3306,
+        "user": url.username,
+        "password": url.password,
+        "database": url.path.lstrip("/"),
+        "ssl_disabled": False,
+        "auth_plugin": "mysql_native_password",
+    }
     else:
         # fallback for local development
         app.config["DB_CONFIG"] = {
