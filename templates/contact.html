@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Contact | InsideNest Interior Design{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>Share your details and we’ll get in touch to discuss your project.</p>
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="container contact-layout">
+        <div class="contact-info">
+            <h2>Let’s design your next space</h2>
+            <p>
+                Fill out the form and we’ll call you back within one business day to understand your requirements
+                and schedule a detailed consultation.
+            </p>
+            <ul class="contact-highlights">
+                <li>Personalized interior concepts</li>
+                <li>Transparent timelines & budgets</li>
+                <li>End-to-end project support</li>
+            </ul>
+        </div>
+
+        <div class="contact-form-wrapper">
+            <form id="contactForm" novalidate>
+                <div class="form-group">
+                    <label for="name">Name <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required>
+                    <p class="field-error" id="nameError"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile_number">Mobile Number <span class="required">*</span></label>
+                    <input type="tel" id="mobile_number" name="mobile_number" inputmode="numeric" pattern="\\d{10}" required>
+                    <p class="field-error" id="mobileError"></p>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+                <p id="formMessage" class="form-message"></p>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

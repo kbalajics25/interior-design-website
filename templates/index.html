@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Home | InsideNest Interior Design{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container hero-inner">
+        <div class="hero-text">
+            <h1>Thoughtful interiors for modern living.</h1>
+            <p>
+                InsideNest crafts warm, functional spaces that reflect your personality.
+                From cozy apartments to elegant villas, we design interiors you’ll love coming home to.
+            </p>
+            <a href="{{ url_for('contact') }}" class="btn btn-primary">Book a Consultation</a>
+        </div>
+        <div class="hero-image">
+            <div class="hero-image-placeholder">
+                <span>Interior Design Showcase</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="highlights">
+    <div class="container highlights-grid">
+        <div class="highlight-card">
+            <h3>Tailored Concepts</h3>
+            <p>Every project starts with understanding your lifestyle, routines, and aspirations.</p>
+        </div>
+        <div class="highlight-card">
+            <h3>End-to-End Service</h3>
+            <p>From moodboards and 3D renders to on-site execution, we handle it all.</p>
+        </div>
+        <div class="highlight-card">
+            <h3>Timeless Aesthetic</h3>
+            <p>We combine clean lines, natural textures, and curated decor for a timeless feel.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
