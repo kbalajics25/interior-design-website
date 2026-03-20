@@ -1,5 +1,5 @@
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from urllib.parse import urlparse
 
 from flask import Flask, jsonify, render_template, request
@@ -123,9 +123,10 @@ def create_app() -> Flask:
             pool = get_db_pool()
             conn = pool.get_connection()
             with conn.cursor() as cur:
+                ist_time = datetime.utcnow() + timedelta(hours=5, minutes=30)
                 cur.execute(
                     "INSERT INTO contacts (name, mobile_number, submitted_at) VALUES (%s, %s, %s)",
-                    (name, mobile_number, datetime.utcnow()),
+                    (name, mobile_number, ist_time),
                 )
                 conn.commit()
         except MySQLError as e:
