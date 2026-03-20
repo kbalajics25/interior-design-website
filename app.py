@@ -63,7 +63,7 @@ def create_app() -> Flask:
         """
         pool = get_db_pool()
         conn = pool.get_connection()
-        cursor.execute("SET time_zone = '+05:30'")
+        cur.execute("SET time_zone = '+05:30'")
         try:
             with conn.cursor() as cur:
                 cur.execute(
