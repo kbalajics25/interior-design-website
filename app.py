@@ -125,7 +125,7 @@ def create_app() -> Flask:
             with conn.cursor() as cur:
                 cur.execute(
                     "INSERT INTO contacts (name, mobile_number, submitted_at) VALUES (%s, %s, %s)",
-                    (name, mobile_number, datetime.now()),
+                    (name, mobile_number, datetime.utcnow()),
                 )
                 conn.commit()
         except MySQLError as e:
